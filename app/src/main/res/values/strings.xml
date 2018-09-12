@@ -1,3 +1,23 @@
 <resources>
-    <string name="app_name">MeowMusicPlayer</string>
+    <!-- Title for the application. [CHAR LIMIT=12] -->
+    <string name="app_name">Meow Music Player</string>
+
+    <!-- Category name for the list of songs [CHAR LIMIT=20] -->
+    <string name="list_songs">Songs</string>
+
+    <!-- Category name for the list of Albums [CHAR LIMIT=20] -->
+    <string name="list_albums">Albums</string>
+
+    <!-- Category name for the list of Artists [CHAR LIMIT=20] -->
+    <string name="list_artists">Artists</string>
+
+    <!-- Category name for the user's playlists [CHAR LIMIT=20] -->
+    <string name="list_playlists">Playlists</string>
+
+    <!-- Category name for the Now Playing screen [CHAR LIMIT=20] -->
+    <string name="list_nowPlaying">Now Playing</string>
+    <string name="title_activity_menu">Your Music</string>
+    <string name="action_settings">Settings</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+
 </resources>
