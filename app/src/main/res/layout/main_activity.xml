@@ -49,120 +49,13 @@
 
     </FrameLayout>
 
-    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:id="@+id/now_playing"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        tools:context=".NowPlaying">
-
-        <ImageView
-            android:id="@+id/albumArt"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:layout_above="@+id/playTrack"
-            android:src="@drawable/ic_album"
-            android:contentDescription="@string/tab_text_3"
-            android:padding="16dp"/>
-
-        <TextView
-            android:id="@+id/playTrack"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingStart="16dp"
-            android:paddingEnd="16dp"
-            android:layout_above="@+id/playArtist"
-            android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Menu"
-            tools:text="Song Track" />
-
-        <TextView
-            android:id="@+id/playArtist"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingStart="16dp"
-            android:paddingEnd="16dp"
-            android:layout_above="@+id/seekbar"
-            android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle"
-            tools:text="Artist" />
-
-        <SeekBar
-            android:id="@+id/seekbar"
-            style="@style/Widget.AppCompat.SeekBar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_above="@+id/buttons"
-            android:padding="16dp" />
-
-        <LinearLayout
-            android:id="@+id/buttons"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            style="@style/Widget.AppCompat.ButtonBar"
-            android:padding="16dp">
-
-            <Button
-                android:id="@+id/pause_btn"
-                style="@style/Widget.AppCompat.Button.Colored"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:contentDescription="@string/pause"
-                android:text="@string/pause" />
-
-            <Button
-                android:id="@+id/play_btn"
-                style="@style/Widget.AppCompat.Button.Colored"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:contentDescription="@string/play"
-                android:text="@string/play" />
-
-            <Button
-                android:id="@+id/stop_btn"
-                style="@style/Widget.AppCompat.Button.Colored"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:contentDescription="@string/stop"
-                android:text="@string/stop" />
-
-        </LinearLayout>
-
-    </RelativeLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/now_playing"
-            style="@style/CategoryStyle"
-            android:background="@color/tabs"
-            android:text="@string/nowPlaying" />
-
-        <Button
-            android:id="@+id/follow"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:textSize="14sp"
-            android:gravity="center_vertical|end"
-            android:paddingRight="10dp"
-            android:paddingLeft="10dp"/>
-
-        <ListView
-            android:id="@+id/list"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1">
-        </ListView>
+        <include layout="@layout/now_playing"/>
 
     </LinearLayout>
 
