@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/now_playing"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".NowPlaying">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/appbar_padding_top"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_weight="0"
+        android:background="?attr/colorPrimary"
+        android:text="@string/nowPlaying">
+
+    </android.support.v7.widget.Toolbar>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <ImageView
+        android:id="@+id/albumArt"
+        android:layout_width="320dp"
+        android:layout_height="0dp"
+        android:layout_gravity="center"
+        android:layout_weight="1"
+        android:src="@drawable/ic_album"
+        android:contentDescription="@string/tab_text_3"
+        android:padding="16dp"/>
+
+    <TextView
+        android:id="@+id/playTrack"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Menu"
+        tools:text="Song Track" />
+
+    <TextView
+        android:id="@+id/playArtist"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle"
+        tools:text="Artist" />
+
+    <SeekBar
+        android:id="@+id/seekbar"
+        style="@style/Widget.AppCompat.SeekBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:padding="16dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_weight="0"
+        style="@style/Widget.AppCompat.ButtonBar"
+        android:padding="16dp">
+
+        <Button
+            android:id="@+id/pause_btn"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:contentDescription="@string/pause"
+            android:text="@string/pause" />
+
+        <Button
+            android:id="@+id/play_btn"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:contentDescription="@string/play"
+            android:text="@string/play" />
+
+        <Button
+            android:id="@+id/stop_btn"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:contentDescription="@string/stop"
+            android:text="@string/stop" />
+
+    </LinearLayout>
+
+</LinearLayout>

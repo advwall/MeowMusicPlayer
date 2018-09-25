@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:orientation="vertical"
+    tools:context="com.example.android.meowmusicplayer.MainActivity">
+
+    <TextView
+        android:id="@+id/now_playing"
+        style="@style/CategoryStyle"
+        android:background="@color/tabs"
+        android:text="@string/nowPlaying" />
+
+    <TextView
+        android:id="@+id/songs"
+        style="@style/CategoryStyle"
+        android:background="@color/tabs"
+        android:text="@string/tab_text_1" />
+
+    <TextView
+        android:id="@+id/artists"
+        style="@style/CategoryStyle"
+        android:background="@color/tabs"
+        android:text="@string/tab_text_2" />
+
+    <TextView
+        android:id="@+id/albums"
+        style="@style/CategoryStyle"
+        android:background="@color/tabs"
+        android:text="@string/tab_text_3" />
+
+</LinearLayout>

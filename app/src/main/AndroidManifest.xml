@@ -11,32 +11,23 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SongList">
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".SongList"
-            android:label="@string/list_songs" />
-        <activity
-            android:name=".AlbumList"
-            android:label="@string/list_artists" />
-        <activity
-            android:name=".ArtistList"
-            android:label="@string/list_albums" />
-        <activity
-            android:name=".Playlists"
-            android:label="@string/list_playlists" />
-        <activity android:name=".FragmentPagerSupport" />
-        <activity
-            android:name=".menu"
-            android:label="@string/title_activity_menu"
-            android:theme="@style/AppTheme">
 
-        </activity>
+        <activity android:name=".NowPlaying"
+            android:label="@string/nowPlaying"/>
+        <activity android:name=".SongActivity"
+            android:label="@string/tab_text_1"/>
+        <activity android:name=".ArtistActivity"
+            android:label="@string/tab_text_2"/>
+        <activity android:name=".AlbumActivity"
+            android:label="@string/tab_text_3"/>
+
     </application>
 
 </manifest>

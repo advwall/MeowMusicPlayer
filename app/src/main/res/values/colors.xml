@@ -1,15 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- Primary color of the app (shown in the app bar) -->
-    <color name="primary_color">#009688</color>
+    <color name="primary_color">#6a1b9a</color>
 
     <!-- Primary dark color of the app (shown in the status bar) -->
-    <color name="primary_dark_color">#004D40</color>
+    <color name="primary_dark_color">#38006b</color>
 
     <!-- Background color for app -->
-    <color name="green_background">#B2DFDB</color>
+    <color name="background">#76ffff</color>
+
+    <!-- Background color for tabs -->
+    <color name="tabs">#9c4dcc</color>
 
     <!-- Background color for buttons -->
-    <color name="buttons">#00695C</color>
+    <color name="buttons">#18ffff</color>
+
+    <!-- Color for text on dark backgrounds -->
+    <color name="text_color_light">#ffffff</color>
+
+    <!-- Color for text on light backgrounds -->
+    <color name="text_color_dark">#000000</color>
 
 </resources>
