@@ -4,10 +4,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.GridView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -24,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
             // The code in this method will be executed when the "Now Playing" is clicked on.
             @Override
             public void onClick(View view) {
-                // Create a new intent to open the {@link NumbersActivity}
+                // Create a new intent to open the {@link NowPlaying}
                 Intent nowPlayingIntent = new Intent(MainActivity.this, NowPlaying.class);
 
                 // Start the new activity
