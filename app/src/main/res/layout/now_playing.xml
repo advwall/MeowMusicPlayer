@@ -5,35 +5,33 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".NowPlaying">
+    tools:context=".NowPlaying"
+    >
 
     <ImageView
         android:id="@+id/albumArt"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
         android:layout_above="@+id/playTrack"
-        android:src="@drawable/ic_album"
+        android:adjustViewBounds="true"
+        android:background="@drawable/background_gradient"
         android:contentDescription="@string/tab_text_3"
-        android:padding="16dp"/>
+        android:padding="16dp"
+        android:src="@drawable/ic_album" />
 
     <TextView
         android:id="@+id/playTrack"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingStart="16dp"
-        android:paddingEnd="16dp"
+        style="@style/NowPlayingStyle"
         android:layout_above="@+id/playArtist"
-        android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Menu"
         tools:text="Song Track" />
 
     <TextView
         android:id="@+id/playArtist"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingStart="16dp"
-        android:paddingEnd="16dp"
+        style="@style/NowPlayingStyle"
         android:layout_above="@+id/seekbar"
         android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle"
         tools:text="Artist" />
@@ -54,7 +52,9 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         style="@style/Widget.AppCompat.ButtonBar"
-        android:padding="16dp">
+        android:padding="16dp"
+        android:clickable="true"
+        android:focusable="true">
 
         <Button
             android:id="@+id/pause_btn"

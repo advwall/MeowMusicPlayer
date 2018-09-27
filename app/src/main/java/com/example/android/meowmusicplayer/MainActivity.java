@@ -1,5 +1,12 @@
 package com.example.android.meowmusicplayer;
 
+/**
+ * This app uses umano SlidingUpPanel.
+ * https://github.com/umano/AndroidSlidingUpPanel
+ */
+
+
+
 import android.content.Intent;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
@@ -27,22 +34,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_activity);
-
-        setSupportActionBar((Toolbar) findViewById(R.id.main_toolbar));
-
-//        // Find the View that shows the numbers category
-//        TextView nowPlayingView = (TextView) findViewById(R.id.now_playing);
-//        nowPlayingView.setOnClickListener(new View.OnClickListener() {
-//            // The code in this method will be executed when the "Now Playing" is clicked on.
-//            @Override
-//            public void onClick(View view) {
-//                // Create a new intent to open the {@link NowPlaying}
-//                Intent nowPlayingIntent = new Intent(MainActivity.this, NowPlaying.class);
-//
-//                // Start the new activity
-//                startActivity(nowPlayingIntent);
-//            }
-//        });
 
         // Find the View that shows the songs category
         TextView songsView = (TextView) findViewById(R.id.songs);
@@ -104,14 +95,6 @@ public class MainActivity extends AppCompatActivity {
                 mLayout.setPanelState(SlidingUpPanelLayout.PanelState.COLLAPSED);
             }
         });
-
-        //This text shows the name of the currently playing song and artist.
-        TextView t = (TextView) findViewById(R.id.song_name);
-        t.setText(R.string.tab_text_1);
-
-        //These are buttons for playing or pausing the audio.
-        TextView f = (TextView) findViewById(R.id.artist_name);
-        f.setText(R.string.tab_text_2);
 
     }
 

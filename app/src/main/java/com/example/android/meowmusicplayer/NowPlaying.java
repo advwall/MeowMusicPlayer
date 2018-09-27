@@ -9,15 +9,14 @@ import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class NowPlaying extends AppCompatActivity {
+
+public class NowPlaying extends AppCompatActivity implements View.OnClickListener {
 
     ImageView albumArt = findViewById(R.id.albumArt);
     TextView artistName = findViewById(R.id.playArtist);
     TextView songName = findViewById(R.id.playTrack);
-    Button playButton = findViewById(R.id.play_btn);
-    Button pauseButton = findViewById(R.id.pause_btn);
-    Button stopButton = findViewById(R.id.stop_btn);
     SeekBar seekbar = findViewById(R.id.seekbar);
+    Button playButton, pauseButton, stopButton;
 
 
     @Override
@@ -26,38 +25,58 @@ public class NowPlaying extends AppCompatActivity {
         setContentView(R.layout.now_playing);
 
 
-        playButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(NowPlaying.this, "Play", Toast.LENGTH_SHORT).show();
-            }
-        });
-        pauseButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(NowPlaying.this, "Paused", Toast.LENGTH_SHORT).show();
-            }
-        });
-        stopButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(NowPlaying.this, "Stop", Toast.LENGTH_SHORT).show();
-            }
-        });
+        playButton = (Button) findViewById(R.id.play_btn);
+        playButton.setOnClickListener(this);
 
-//        Intent i = getIntent();
-//        String txt = i.getStringExtra("song");
-//        TextView singerPlaying = findViewById(R.id.singerPlaying);
-//        singerPlaying.setText(txt);
+        pauseButton = (Button) findViewById(R.id.pause_btn);
+        pauseButton.setOnClickListener(this);
+
+        stopButton =(Button) findViewById(R.id.stop_btn);
+        stopButton.setOnClickListener(this);
+
+
+
+//        playButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Toast.makeText(NowPlaying.this, "Play", Toast.LENGTH_LONG).show();
+//            }
+//        });
+//
+//        pauseButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Toast.makeText(NowPlaying.this, "Paused", Toast.LENGTH_LONG).show();
+//            }
+//        });
+//
+//        stopButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Toast.makeText(NowPlaying.this, "Stop", Toast.LENGTH_LONG).show();
+//            }
+//        });
+
     }
 
-    private void displayArtist (String artistName) {
-        TextView nameArtist = findViewById(R.id.playArtist);
-        nameArtist.setText(artistName);
+    public void onClick(View v) {
+
+        switch (v.getId()) {
+            case R.id.play_btn:
+            {
+                Toast.makeText(NowPlaying.this, "Play", Toast.LENGTH_LONG).show();
+                break;
+            }
+            case R.id.pause_btn:
+                Toast.makeText(NowPlaying.this, "Paused", Toast.LENGTH_LONG).show(); {
+                    break;
+            }
+            case R.id.stop_btn:
+                Toast.makeText(NowPlaying.this, "Stop", Toast.LENGTH_LONG).show(); {
+                    break;
+            }
+
+        }
     }
 
-    private void displayTrack (String artistName) {
-        TextView nameArtist = findViewById(R.id.playArtist);
-        nameArtist.setText(artistName);
-    }
 }

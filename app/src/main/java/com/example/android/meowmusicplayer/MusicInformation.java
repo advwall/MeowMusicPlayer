@@ -23,7 +23,7 @@ public class MusicInformation {
      * Create a new song object
      * @param songList is an available song.
      * @param artistList is the name of the artist for each song.
-     * @param imageResourceId is the image which is associated with the vocab word.
+     * @param imageResourceId is the image which is associated with the album.
      */
 
     MusicInformation(String songList, String artistList, int imageResourceId) {
@@ -54,9 +54,9 @@ public class MusicInformation {
     }
 
 
-    /** Returns whether or not there is an image for this word.
+    /** Returns whether or not there is an image for this album.
      *
-     * @return mImageReourceId
+     * @return mImageResourceId
      */
     public boolean hasImage(){
         return mImageResourceId != NO_IMAGE_PROVIDED;
