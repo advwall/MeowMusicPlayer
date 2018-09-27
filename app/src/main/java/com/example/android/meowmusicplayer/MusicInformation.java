@@ -2,9 +2,9 @@ package com.example.android.meowmusicplayer;
 
 
 /**
- * {@link Music} represents the song information which will be displayed on screen.
+ * {@link MusicInformation} represents the song information which will be displayed on screen.
  */
-public class Music {
+public class MusicInformation {
 
     //List of Songs
     private String mSongList;
@@ -12,7 +12,8 @@ public class Music {
     //List of Artists
     private String mArtistList;
 
-    /**Image Resource ID for the song */
+    /**Image Resource ID for the song
+     * -1 is used to indicate that there is no image associated with the song. */
     private int mImageResourceId;
 
     private static final int NO_IMAGE_PROVIDED = -1;
@@ -25,7 +26,7 @@ public class Music {
      * @param imageResourceId is the image which is associated with the vocab word.
      */
 
-    Music(String songList, String artistList, int imageResourceId) {
+    MusicInformation(String songList, String artistList, int imageResourceId) {
         mSongList = songList;
         mArtistList = artistList;
         mImageResourceId = imageResourceId;

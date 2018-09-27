@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.text.Html;
 import android.text.method.LinkMovementMethod;
 import android.util.Log;
@@ -17,6 +18,7 @@ import com.sothree.slidinguppanel.SlidingUpPanelLayout;
 
 
 public class MainActivity extends AppCompatActivity {
+    private static final String TAG = "DemoActivity";
 
     private SlidingUpPanelLayout mLayout;
 
@@ -25,6 +27,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_activity);
+
+        setSupportActionBar((Toolbar) findViewById(R.id.main_toolbar));
 
 //        // Find the View that shows the numbers category
 //        TextView nowPlayingView = (TextView) findViewById(R.id.now_playing);
@@ -81,49 +85,43 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(albumsIntent);
             }
         });
+
+        mLayout = (SlidingUpPanelLayout) findViewById(R.id.sliding_layout);
+        mLayout.addPanelSlideListener(new SlidingUpPanelLayout.PanelSlideListener() {
+            @Override
+            public void onPanelSlide(View panel, float slideOffset) {
+                Log.i(TAG, "onPanelSlide, offset " + slideOffset);
+            }
+
+            @Override
+            public void onPanelStateChanged(View panel, SlidingUpPanelLayout.PanelState previousState, SlidingUpPanelLayout.PanelState newState) {
+                Log.i(TAG, "onPanelStateChanged " + newState);
+            }
+        });
+        mLayout.setFadeOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mLayout.setPanelState(SlidingUpPanelLayout.PanelState.COLLAPSED);
+            }
+        });
+
+        //This text shows the name of the currently playing song and artist.
+        TextView t = (TextView) findViewById(R.id.song_name);
+        t.setText(R.string.tab_text_1);
+
+        //These are buttons for playing or pausing the audio.
+        TextView f = (TextView) findViewById(R.id.artist_name);
+        f.setText(R.string.tab_text_2);
+
     }
 
-//    mLayout = (SlidingUpPanelLayout) findViewById(R.id.sliding_layout);
-//        mLayout.addPanelSlideListener(new PanelSlideListener() {
-//        @Override
-//        public void onPanelSlide(View panel, float slideOffset) {
-//            Log.i(TAG, "onPanelSlide, offset " + slideOffset);
-//        }
-//
-//        @Override
-//        public void onPanelStateChanged(View panel, PanelState previousState, PanelState newState) {
-//            Log.i(TAG, "onPanelStateChanged " + newState);
-//        }
-//    });
-//        mLayout.setFadeOnClickListener(new OnClickListener() {
-//        @Override
-//        public void onClick(View view) {
-//            mLayout.setPanelState(SlidingUpPanelLayout.PanelState.COLLAPSED);
-//        }
-//    });
-//
-//    TextView t = (TextView) findViewById(R.id.name);
-//        t.setText(Html.fromHtml(getString(R.string.hello)));
-//    Button f = (Button) findViewById(R.id.follow);
-//        f.setText(Html.fromHtml(getString(R.string.follow)));
-//        f.setMovementMethod(LinkMovementMethod.getInstance());
-//        f.setOnClickListener(new OnClickListener() {
-//        @Override
-//        public void onClick(View v) {
-//            Intent i = new Intent(Intent.ACTION_VIEW);
-//            i.setData(Uri.parse("http://www.twitter.com/umanoapp"));
-//            startActivity(i);
-//        }
-//    });
-//}
-//
 //    @Override
 //    public boolean onCreateOptionsMenu(Menu menu) {
 //        // Inflate the menu; this adds items to the action bar if it is present.
-//        getMenuInflater().inflate(R.menu.demo, menu);
+//        getMenuInflater().inflate(R.menu.menu, menu);
 //        MenuItem item = menu.findItem(R.id.action_toggle);
 //        if (mLayout != null) {
-//            if (mLayout.getPanelState() == PanelState.HIDDEN) {
+//            if (mLayout.getPanelState() == SlidingUpPanelLayout.PanelState.HIDDEN) {
 //                item.setTitle(R.string.action_show);
 //            } else {
 //                item.setTitle(R.string.action_hide);
@@ -131,36 +129,37 @@ public class MainActivity extends AppCompatActivity {
 //        }
 //        return true;
 //    }
-//
+
 //    @Override
 //    public boolean onPrepareOptionsMenu(Menu menu) {
 //        return super.onPrepareOptionsMenu(menu);
 //    }
-//
+
 //    @Override
 //    public boolean onOptionsItemSelected(MenuItem item) {
 //        switch (item.getItemId()){
 //            case R.id.action_toggle: {
 //                if (mLayout != null) {
-//                    if (mLayout.getPanelState() != PanelState.HIDDEN) {
-//                        mLayout.setPanelState(PanelState.HIDDEN);
+//                    if (mLayout.getPanelState() != SlidingUpPanelLayout.PanelState.HIDDEN) {
+//                        mLayout.setPanelState(SlidingUpPanelLayout.PanelState.HIDDEN);
 //                        item.setTitle(R.string.action_show);
 //                    } else {
-//                        mLayout.setPanelState(PanelState.COLLAPSED);
+//                        mLayout.setPanelState(SlidingUpPanelLayout.PanelState.COLLAPSED);
 //                        item.setTitle(R.string.action_hide);
 //                    }
 //                }
 //                return true;
 //            }
+//
 //            case R.id.action_anchor: {
 //                if (mLayout != null) {
 //                    if (mLayout.getAnchorPoint() == 1.0f) {
 //                        mLayout.setAnchorPoint(0.7f);
-//                        mLayout.setPanelState(PanelState.ANCHORED);
+//                        mLayout.setPanelState(SlidingUpPanelLayout.PanelState.ANCHORED);
 //                        item.setTitle(R.string.action_anchor_disable);
 //                    } else {
 //                        mLayout.setAnchorPoint(1.0f);
-//                        mLayout.setPanelState(PanelState.COLLAPSED);
+//                        mLayout.setPanelState(SlidingUpPanelLayout.PanelState.COLLAPSED);
 //                        item.setTitle(R.string.action_anchor_enable);
 //                    }
 //                }
@@ -169,16 +168,18 @@ public class MainActivity extends AppCompatActivity {
 //        }
 //        return super.onOptionsItemSelected(item);
 //    }
-//
-//    @Override
-//    public void onBackPressed() {
-//        if (mLayout != null &&
-//                (mLayout.getPanelState() == PanelState.EXPANDED || mLayout.getPanelState() == PanelState.ANCHORED)) {
-//            mLayout.setPanelState(PanelState.COLLAPSED);
-//        } else {
-//            super.onBackPressed();
-//        }
-//    }
 
-}
+    @Override
+    public void onBackPressed() {
+        if (mLayout != null &&
+                (mLayout.getPanelState() == SlidingUpPanelLayout.PanelState.EXPANDED || mLayout.getPanelState() == SlidingUpPanelLayout.PanelState.ANCHORED)) {
+            mLayout.setPanelState(SlidingUpPanelLayout.PanelState.COLLAPSED);
+        } else {
+            super.onBackPressed();
+        }
+    }
+
+
+    }
+
 

@@ -11,9 +11,9 @@
     <string name="action_settings">Settings</string>
 
     <!-- Category name for the list of songs. -->
-    <string name="pause">Pause</string>
     <string name="play">Play</string>
     <string name="stop">Stop</string>
+    <string name="pause">Pause</string>
 
     <!-- Category name for the list of songs. -->
     <string name="tab_text_1">Songs</string>
@@ -23,5 +23,9 @@
 
     <!-- Category name for the list of Albums.  -->
     <string name="tab_text_3">Albums</string>
+
+    <string name="song_name">Current Track</string>
+    <string name="artist_name">Current Artist</string>
+    <string name="album_name">Current Album</string>
 
 </resources>

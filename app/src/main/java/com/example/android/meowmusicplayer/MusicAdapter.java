@@ -12,16 +12,16 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-public class MusicAdapter extends ArrayAdapter<Music> {
+public class MusicAdapter extends ArrayAdapter<MusicInformation> {
 
     private int mColorResourceId;
 
-    MusicAdapter(Activity context, ArrayList<Music> music, int colorResourceId) {
+    MusicAdapter(Activity context, ArrayList<MusicInformation> musicInfo, int colorResourceId) {
         // Here, we initialize the ArrayAdapter's internal storage for the context and the list.
         // the second argument is used when the ArrayAdapter is populating a single TextView.
         // Because this is a custom adapter for two TextViews and an ImageView, the adapter is not
         // going to use this second argument, so it can be any value. Here, we used 0.
-        super(context, 0, music);
+        super(context, 0, musicInfo);
         mColorResourceId = colorResourceId;
     }
 
@@ -35,7 +35,7 @@ public class MusicAdapter extends ArrayAdapter<Music> {
                     R.layout.list_layout, parent, false);
         }
 
-        Music currentSong = getItem(position);
+        MusicInformation currentSong = getItem(position);
 
         // Find the TextView in the list_item.xml layout with the ID version_name
         TextView songTextView = listItemView.findViewById(R.id.song_name);
