@@ -35,6 +35,7 @@
             android:label="@string/tab_text_2"/>
         <activity android:name=".AlbumActivity"
             android:label="@string/tab_text_3"/>
+        <activity android:name=".NowPlayingActivity" />
 
     </application>
 </manifest>

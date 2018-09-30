@@ -10,7 +10,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
-public class NowPlaying extends AppCompatActivity implements View.OnClickListener {
+public class NowPlayingActivity extends AppCompatActivity implements View.OnClickListener {
 
     ImageView albumArt = findViewById(R.id.albumArt);
     TextView artistName = findViewById(R.id.playArtist);
@@ -59,20 +59,21 @@ public class NowPlaying extends AppCompatActivity implements View.OnClickListene
 
     }
 
+    //The play status is listed as a toast when buttons in now_playing.xml are clicked.
     public void onClick(View v) {
 
         switch (v.getId()) {
             case R.id.play_btn:
             {
-                Toast.makeText(NowPlaying.this, "Play", Toast.LENGTH_LONG).show();
+                Toast.makeText(NowPlayingActivity.this, "Play", Toast.LENGTH_LONG).show();
                 break;
             }
             case R.id.pause_btn:
-                Toast.makeText(NowPlaying.this, "Paused", Toast.LENGTH_LONG).show(); {
+                Toast.makeText(NowPlayingActivity.this, "Paused", Toast.LENGTH_LONG).show(); {
                     break;
             }
             case R.id.stop_btn:
-                Toast.makeText(NowPlaying.this, "Stop", Toast.LENGTH_LONG).show(); {
+                Toast.makeText(NowPlayingActivity.this, "Stop", Toast.LENGTH_LONG).show(); {
                     break;
             }
 

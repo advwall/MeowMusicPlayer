@@ -16,16 +16,16 @@ public class MusicAdapter extends ArrayAdapter<MusicInformation> {
 
     private int mColorResourceId;
 
+
+    // Here, we initialize the ArrayAdapter's internal storage for the context and the list.
+    // the second argument is used when the ArrayAdapter is populating a single TextView.
+    // Because this is a custom adapter for two TextViews and an ImageView, the adapter is not
+    // going to use this second argument, so it can be any value. Here, we used 0.
     MusicAdapter(Activity context, ArrayList<MusicInformation> musicInfo, int colorResourceId) {
-        // Here, we initialize the ArrayAdapter's internal storage for the context and the list.
-        // the second argument is used when the ArrayAdapter is populating a single TextView.
-        // Because this is a custom adapter for two TextViews and an ImageView, the adapter is not
-        // going to use this second argument, so it can be any value. Here, we used 0.
         super(context, 0, musicInfo);
         mColorResourceId = colorResourceId;
     }
 
-    @NonNull
     @Override
     public View getView(int position, View convertView, @NonNull ViewGroup parent) {
         // Check if the existing view is being reused, otherwise inflate the view
@@ -44,17 +44,17 @@ public class MusicAdapter extends ArrayAdapter<MusicInformation> {
         assert currentSong != null;
         songTextView.setText(currentSong.getSongList());
 
-        // Find the TextView in the list_item.xml layout with the ID version_number
+        // Find the TextView in the list_layout.xml layout with the ID version_number
         TextView artistTextView = listItemView.findViewById(R.id.artist_name);
-        // Get the version number from the current AndroidFlavor object and
-        // set this text on the number TextView
+        // Get the current artist name from the artist object and
+        // set this text on the artist TextView
         artistTextView.setText(currentSong.getArtistList());
 
-        // Find the ImageView in the list_item.xml layout with the ID list_item_icon
+        // Find the ImageView in the list_layout.xml layout with the ID list_item_icon
         ImageView imageView = listItemView.findViewById(R.id.image);
 
         if (currentSong.hasImage()) {
-            // Set the imageView to the resource specified in the current word
+            // Set the imageView to the resource specified in the current song
             imageView.setImageResource(currentSong.getImageResourceId());
 
             //Make sure the view is visible.
@@ -71,10 +71,8 @@ public class MusicAdapter extends ArrayAdapter<MusicInformation> {
         //Set the background color of the text container view
         textContainer.setBackgroundColor(color);
 
-
         // Return the whole list item layout (containing 2 TextViews and an ImageView)
         // so that it can be shown in the ListView
         return listItemView;
-
     }
 }

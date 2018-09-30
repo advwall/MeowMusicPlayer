@@ -27,5 +27,7 @@
     <string name="song_name">Current Track</string>
     <string name="artist_name">Current Artist</string>
     <string name="album_name">Current Album</string>
+    <string name="settings_one">Settings 1</string>
+    <string name="settings_two">Settings 2</string>
 
 </resources>
