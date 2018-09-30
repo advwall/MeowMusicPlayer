@@ -30,8 +30,8 @@ public class MainActivity extends AppCompatActivity {
     private static final String TAG = "DemoActivity";
     private SlidingUpPanelLayout mLayout;
 
-    private TextView mSelectedTrackTitle;
-    private ImageView mSelectedTrackImage;
+    TextView mSelectedTrackTitle;
+    ImageView mSelectedTrackImage;
     IntBuffer mListItems;
 
 
@@ -45,22 +45,9 @@ public class MainActivity extends AppCompatActivity {
         mSelectedTrackTitle = (TextView)findViewById(R.id.selected_track_title);
         mSelectedTrackImage = (ImageView)findViewById(R.id.selected_track_image);
 
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
-                Track track = mListItems.get(position);
-
-                mSelectedTrackTitle.setText(track.getTitle());
-                Picasso.with(MainActivity.this).load(track.getArtworkURL()).into(mSelectedTrackImage);
-
-            }
-
-
         // Find the View that shows the songs category
         TextView songsView = (TextView) findViewById(R.id.songs);
         songsView.setOnClickListener(new View.OnClickListener() {
-            // The code in this method will be executed when the family category is clicked on.
             @Override
             public void onClick(View view) {
                 // Create a new intent to open the {@link FamilyActivity}
@@ -74,8 +61,7 @@ public class MainActivity extends AppCompatActivity {
         // Find the View that shows the artist category
         TextView artistView = (TextView) findViewById(R.id.artists);
         artistView.setOnClickListener(new View.OnClickListener() {
-            // The code in this method will be executed when the colors category is clicked on.
-            @Override
+            // The code in this method will be executed when the colors category is clicked on.            @Override
             public void onClick(View view) {
                 // Create a new intent to open the {@link ColorsActivity}
                 Intent artistsIntent = new Intent(MainActivity.this, ArtistActivity.class);
@@ -88,7 +74,6 @@ public class MainActivity extends AppCompatActivity {
         // Find the View that shows the phrases category
         TextView albumsView = (TextView) findViewById(R.id.albums);
         albumsView.setOnClickListener(new View.OnClickListener() {
-            // The code in this method will be executed when the phrases category is clicked on.
             @Override
             public void onClick(View view) {
                 // Create a new intent to open the {@link PhrasesActivity}
@@ -121,6 +106,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
