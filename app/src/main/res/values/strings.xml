@@ -2,9 +2,6 @@
     <!-- Title for the application. [CHAR LIMIT=12] -->
     <string name="app_name">Meow Music Player</string>
 
-    <!-- Category name for the user's playlists [CHAR LIMIT=20] -->
-    <string name="list_playlists">Playlists</string>
-
     <!-- Category name for the Now Playing screen [CHAR LIMIT=20] -->
     <string name="nowPlaying">Now Playing</string>
     <string name="title_activity_menu">Your Music</string>

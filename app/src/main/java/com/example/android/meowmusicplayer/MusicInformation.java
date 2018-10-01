@@ -7,14 +7,14 @@ package com.example.android.meowmusicplayer;
 public class MusicInformation {
 
     //List of Songs
-    private String mSongList;
+    private String SongList;
 
     //List of Artists
-    private String mArtistList;
+    private String ArtistList;
 
     /**Image Resource ID for the song
      * -1 is used to indicate that there is no image associated with the song. */
-    private int mImageResourceId;
+    private int ImageResourceId;
 
     private static final int NO_IMAGE_PROVIDED = -1;
 
@@ -27,30 +27,30 @@ public class MusicInformation {
      */
 
     MusicInformation(String songList, String artistList, int imageResourceId) {
-        mSongList = songList;
-        mArtistList = artistList;
-        mImageResourceId = imageResourceId;
+        SongList = songList;
+        ArtistList = artistList;
+        ImageResourceId = imageResourceId;
     }
 
     /**
      * Get the song name.
      */
     public String getSongList() {
-        return mSongList;
+        return SongList;
     }
 
     /**
      * Get the Artist name.
      */
     public String getArtistList(){
-        return mArtistList;
+        return ArtistList;
     }
 
     /**
      * Return the image resource ID of the word.
      */
     public int getImageResourceId() {
-        return mImageResourceId;
+        return ImageResourceId;
     }
 
 
@@ -59,7 +59,7 @@ public class MusicInformation {
      * @return mImageResourceId
      */
     public boolean hasImage(){
-        return mImageResourceId != NO_IMAGE_PROVIDED;
+        return ImageResourceId != NO_IMAGE_PROVIDED;
 
     }
 

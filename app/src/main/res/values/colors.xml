@@ -6,14 +6,8 @@
     <!-- Primary dark color of the app (shown in the status bar) -->
     <color name="primary_dark_color">#38006b</color>
 
-    <!-- Background color for app -->
-    <color name="background">#76ffff</color>
-
     <!-- Background color for tabs -->
     <color name="tabs">#9c4dcc</color>
-
-    <!-- Background color for buttons -->
-    <color name="buttons">#18ffff</color>
 
     <!-- Color for text on dark backgrounds -->
     <color name="text_color_light">#ffffff</color>

@@ -11,41 +11,38 @@
     android:background="@drawable/background_gradient">
 
     <android.support.v7.widget.Toolbar
-        android:id="@+id/secondary_toolbar"
+        android:id="@+id/main_toolbar"
         android:layout_width="match_parent"
         android:layout_height="68dp"
-        android:minHeight="?attr/actionBarSize"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
         android:background="@color/primary_dark_color"
-        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" >
-
-        <ImageView
-            android:id="@+id/selected_track_image"
-            android:layout_width="@dimen/image_size"
-            android:layout_height="@dimen/image_size"
-            android:src="@drawable/artist_background"
-            />
+        android:minHeight="?attr/actionBarSize"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
         <TextView
             android:id="@+id/selected_track_title"
-            android:paddingStart="8dp"
-            android:paddingEnd="8dp"
+            style="@style/CategoryStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            style="@style/CategoryStyle"
-            android:text="@string/song_name"/>
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:text="@string/song_name"
+            android:layout_gravity="start"/>
 
         <ImageButton
-            android:id="@+id/player_control"
-            android:layout_gravity="end"
+            android:id="@+id/exit_playing"
             android:layout_width="@dimen/image_size"
             android:layout_height="@dimen/image_size"
-            android:src="@drawable/play_arrow"
-            android:background="@color/primary_color"
+            android:layout_gravity="end"
+            android:src="@drawable/outline_clear_black_18dp"
             android:layout_marginEnd="16dp"
-            android:contentDescription="@string/nowPlaying"
+            android:adjustViewBounds="true"
             android:clickable="true"
-            android:focusable="true"/>
+            android:contentDescription="@string/nowPlaying"
+            android:focusable="true"
+            android:gravity="start" />
 
     </android.support.v7.widget.Toolbar>
 
@@ -54,7 +51,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_above="@+id/playTrack"
-        android:layout_below="@+id/secondary_toolbar"
+        android:layout_below="@+id/main_toolbar"
         android:adjustViewBounds="true"
         android:contentDescription="@string/tab_text_3"
         android:scaleType="fitCenter"

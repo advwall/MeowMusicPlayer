@@ -1,7 +1,6 @@
 package com.example.android.meowmusicplayer;
 
 import android.app.Activity;
-import android.support.annotation.NonNull;
 import android.support.v4.content.ContextCompat;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,7 +13,7 @@ import java.util.ArrayList;
 
 public class MusicAdapter extends ArrayAdapter<MusicInformation> {
 
-    private int mColorResourceId;
+    private int ColorResourceId;
 
 
     // Here, we initialize the ArrayAdapter's internal storage for the context and the list.
@@ -23,11 +22,11 @@ public class MusicAdapter extends ArrayAdapter<MusicInformation> {
     // going to use this second argument, so it can be any value. Here, we used 0.
     MusicAdapter(Activity context, ArrayList<MusicInformation> musicInfo, int colorResourceId) {
         super(context, 0, musicInfo);
-        mColorResourceId = colorResourceId;
+        ColorResourceId = colorResourceId;
     }
 
     @Override
-    public View getView(int position, View convertView, @NonNull ViewGroup parent) {
+    public View getView(int position, View convertView, ViewGroup parent) {
         // Check if the existing view is being reused, otherwise inflate the view
         View listItemView = convertView;
         if (listItemView == null) {
@@ -37,11 +36,10 @@ public class MusicAdapter extends ArrayAdapter<MusicInformation> {
 
         MusicInformation currentSong = getItem(position);
 
-        // Find the TextView in the list_item.xml layout with the ID version_name
+        // Find the TextView in the list_item.xml layout with the ID song_name
         TextView songTextView = listItemView.findViewById(R.id.song_name);
-        // Get the version name from the current AndroidFlavor object and
+        // Get the song name from the current SongActivity object and
         // set this text on the name TextView
-        assert currentSong != null;
         songTextView.setText(currentSong.getSongList());
 
         // Find the TextView in the list_layout.xml layout with the ID version_number
@@ -67,7 +65,7 @@ public class MusicAdapter extends ArrayAdapter<MusicInformation> {
         //Set the theme color for the list item.
         View textContainer = listItemView.findViewById(R.id.text_container);
         //Find the color that the resource ID maps to.
-        int color = ContextCompat.getColor(getContext(), mColorResourceId);
+        int color = ContextCompat.getColor(getContext(), ColorResourceId);
         //Set the background color of the text container view
         textContainer.setBackgroundColor(color);
 
