@@ -17,8 +17,6 @@ import android.widget.Toast;
 public class NowPlayingActivity extends AppCompatActivity {
 
     ImageView albumArt = findViewById(R.id.albumArt);
-    TextView artistName = findViewById(R.id.playArtist);
-    TextView songName = findViewById(R.id.playTrack);
     SeekBar seekbar = findViewById(R.id.seekbar);
 
 
@@ -28,7 +26,7 @@ public class NowPlayingActivity extends AppCompatActivity {
         setContentView(R.layout.now_playing);
 
 
-        final Button playButton = (Button) findViewById(R.id.play_btn);
+        Button playButton = findViewById(R.id.play_btn);
         playButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -36,7 +34,7 @@ public class NowPlayingActivity extends AppCompatActivity {
             }
         });
 
-        final ImageButton panelPlayButton = (ImageButton) findViewById(R.id.player_control);
+        ImageButton panelPlayButton = findViewById(R.id.player_control);
         panelPlayButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -44,7 +42,7 @@ public class NowPlayingActivity extends AppCompatActivity {
             }
         });
 
-        final Button pauseButton = (Button) findViewById(R.id.pause_btn);
+        Button pauseButton = findViewById(R.id.pause_btn);
         pauseButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -52,7 +50,7 @@ public class NowPlayingActivity extends AppCompatActivity {
             }
         });
 
-        final Button stopButton = (Button) findViewById(R.id.stop_btn);
+        Button stopButton = findViewById(R.id.stop_btn);
         stopButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

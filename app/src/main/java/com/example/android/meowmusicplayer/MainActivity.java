@@ -15,19 +15,13 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 import com.sothree.slidinguppanel.SlidingUpPanelLayout;
 
 
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = "MainActivity";
     private SlidingUpPanelLayout mLayout;
-
-    TextView mSelectedTrackTitle;
-    ImageView mSelectedTrackImage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,14 +30,8 @@ public class MainActivity extends AppCompatActivity {
 
         setSupportActionBar((Toolbar) findViewById(R.id.main_toolbar));
 
-        mSelectedTrackTitle = (TextView)findViewById(R.id.selected_track_title);
-        mSelectedTrackImage = (ImageView)findViewById(R.id.selected_track_image);
-
-
-
-
         // Find the View that shows the songs category
-        TextView songsView = (TextView) findViewById(R.id.songs);
+        TextView songsView = findViewById(R.id.songs);
         songsView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -56,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         // Find the View that shows the artist category
-        TextView artistView = (TextView) findViewById(R.id.artists);
+        TextView artistView = findViewById(R.id.artists);
         artistView.setOnClickListener(new View.OnClickListener() {
             // The code in this method will be executed when the colors category is clicked on.            @Override
             public void onClick(View view) {
@@ -69,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         // Find the View that shows the phrases category
-        TextView albumsView = (TextView) findViewById(R.id.albums);
+        TextView albumsView = findViewById(R.id.albums);
         albumsView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -81,14 +69,10 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        RelativeLayout nowPlayingActivity = (RelativeLayout) findViewById(R.id.now_playing);
-        mLayout.setAnchorPoint(0.4f);
-        mLayout.setDragView(nowPlayingActivity);
-        mLayout =(SlidingUpPanelLayout) findViewById(R.id.sliding_layout);
+        mLayout = (SlidingUpPanelLayout) findViewById(R.id.sliding_layout);
         mLayout.addPanelSlideListener(new SlidingUpPanelLayout.PanelSlideListener() {
             @Override
             public void onPanelSlide(View panel, float slideOffset) {
-
                 Log.i(TAG, "onPanelSlide, offset " + slideOffset);
             }
 
@@ -105,16 +89,13 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        mLayout.setFadeOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onPanelOpened(View panel) {
-                setContentView(R.layout.now_playing);
-                mLayout.setPanelState(SlidingUpPanelLayout.PanelState.COLLAPSED);
-            }
-        });
     }
 
 
+
+
+
+    //These methods tell the options menu what to do.
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
