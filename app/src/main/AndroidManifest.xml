@@ -27,7 +27,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".NowPlaying"
+        <activity android:name=".NowPlayingActivity"
             android:label="@string/nowPlaying"/>
         <activity android:name=".SongActivity"
             android:label="@string/tab_text_1"/>
@@ -35,7 +35,6 @@
             android:label="@string/tab_text_2"/>
         <activity android:name=".AlbumActivity"
             android:label="@string/tab_text_3"/>
-        <activity android:name=".NowPlayingActivity" />
 
     </application>
 </manifest>

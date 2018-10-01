@@ -1,22 +1,25 @@
 package com.example.android.meowmusicplayer;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
 
-public class NowPlayingActivity extends AppCompatActivity implements View.OnClickListener {
+public class NowPlayingActivity extends AppCompatActivity {
 
     ImageView albumArt = findViewById(R.id.albumArt);
     TextView artistName = findViewById(R.id.playArtist);
     TextView songName = findViewById(R.id.playTrack);
     SeekBar seekbar = findViewById(R.id.seekbar);
-    Button playButton, pauseButton, stopButton;
 
 
     @Override
@@ -25,59 +28,37 @@ public class NowPlayingActivity extends AppCompatActivity implements View.OnClic
         setContentView(R.layout.now_playing);
 
 
-        playButton = (Button) findViewById(R.id.play_btn);
-        playButton.setOnClickListener(this);
+        final Button playButton = (Button) findViewById(R.id.play_btn);
+        playButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(NowPlayingActivity.this, "onItemClick", Toast.LENGTH_LONG).show();
+            }
+        });
 
-        pauseButton = (Button) findViewById(R.id.pause_btn);
-        pauseButton.setOnClickListener(this);
+        final ImageButton panelPlayButton = (ImageButton) findViewById(R.id.player_control);
+        panelPlayButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(NowPlayingActivity.this, "onItemClick", Toast.LENGTH_LONG).show();
+            }
+        });
 
-        stopButton =(Button) findViewById(R.id.stop_btn);
-        stopButton.setOnClickListener(this);
+        final Button pauseButton = (Button) findViewById(R.id.pause_btn);
+        pauseButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(NowPlayingActivity.this, "onItemClick", Toast.LENGTH_LONG).show();
+            }
+        });
 
-
-
-//        playButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Toast.makeText(NowPlaying.this, "Play", Toast.LENGTH_LONG).show();
-//            }
-//        });
-//
-//        pauseButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Toast.makeText(NowPlaying.this, "Paused", Toast.LENGTH_LONG).show();
-//            }
-//        });
-//
-//        stopButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Toast.makeText(NowPlaying.this, "Stop", Toast.LENGTH_LONG).show();
-//            }
-//        });
-
+        final Button stopButton = (Button) findViewById(R.id.stop_btn);
+        stopButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(NowPlayingActivity.this, "onItemClick", Toast.LENGTH_LONG).show();
+            }
+        });
     }
-
-    //The play status is listed as a toast when buttons in now_playing.xml are clicked.
-    public void onClick(View v) {
-
-        switch (v.getId()) {
-            case R.id.play_btn:
-            {
-                Toast.makeText(NowPlayingActivity.this, "Play", Toast.LENGTH_LONG).show();
-                break;
-            }
-            case R.id.pause_btn:
-                Toast.makeText(NowPlayingActivity.this, "Paused", Toast.LENGTH_LONG).show(); {
-                    break;
-            }
-            case R.id.stop_btn:
-                Toast.makeText(NowPlayingActivity.this, "Stop", Toast.LENGTH_LONG).show(); {
-                    break;
-            }
-
-        }
-    }
-
 }
+

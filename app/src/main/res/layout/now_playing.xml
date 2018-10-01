@@ -43,7 +43,9 @@
             android:src="@drawable/play_arrow"
             android:background="@color/primary_color"
             android:layout_marginEnd="16dp"
-            android:contentDescription="@string/nowPlaying"/>
+            android:contentDescription="@string/nowPlaying"
+            android:clickable="true"
+            android:focusable="true"/>
 
     </android.support.v7.widget.Toolbar>
 
@@ -98,8 +100,7 @@
         android:layout_centerHorizontal="true"
         style="@style/Widget.AppCompat.ButtonBar"
         android:padding="16dp"
-        android:clickable="true"
-        android:focusable="true">
+        >
 
         <Button
             android:id="@+id/pause_btn"
@@ -108,7 +109,9 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:contentDescription="@string/pause"
-            android:text="@string/pause" />
+            android:text="@string/pause"
+            android:clickable="true"
+            android:focusable="true"/>
 
         <Button
             android:id="@+id/play_btn"
@@ -117,7 +120,9 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:contentDescription="@string/play"
-            android:text="@string/play" />
+            android:text="@string/play"
+            android:clickable="true"
+            android:focusable="true"/>
 
         <Button
             android:id="@+id/stop_btn"
@@ -126,7 +131,9 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:contentDescription="@string/stop"
-            android:text="@string/stop" />
+            android:text="@string/stop"
+            android:clickable="true"
+            android:focusable="true"/>
 
     </LinearLayout>
 

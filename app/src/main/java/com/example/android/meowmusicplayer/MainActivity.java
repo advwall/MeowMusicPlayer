@@ -13,27 +13,21 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Adapter;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 import com.sothree.slidinguppanel.SlidingUpPanelLayout;
 
-import java.nio.FloatBuffer;
-import java.nio.IntBuffer;
-
 
 public class MainActivity extends AppCompatActivity {
-    private static final String TAG = "DemoActivity";
+    private static final String TAG = "MainActivity";
     private SlidingUpPanelLayout mLayout;
 
     TextView mSelectedTrackTitle;
     ImageView mSelectedTrackImage;
-    IntBuffer mListItems;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,12 +39,15 @@ public class MainActivity extends AppCompatActivity {
         mSelectedTrackTitle = (TextView)findViewById(R.id.selected_track_title);
         mSelectedTrackImage = (ImageView)findViewById(R.id.selected_track_image);
 
+
+
+
         // Find the View that shows the songs category
         TextView songsView = (TextView) findViewById(R.id.songs);
         songsView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // Create a new intent to open the {@link FamilyActivity}
+                // Create a new intent to open the {@link SongActivity}
                 Intent songsIntent = new Intent(MainActivity.this, SongActivity.class);
 
                 // Start the new activity
@@ -63,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
         artistView.setOnClickListener(new View.OnClickListener() {
             // The code in this method will be executed when the colors category is clicked on.            @Override
             public void onClick(View view) {
-                // Create a new intent to open the {@link ColorsActivity}
+                // Create a new intent to open the {@link ArtistActivity}
                 Intent artistsIntent = new Intent(MainActivity.this, ArtistActivity.class);
 
                 // Start the new activity
@@ -76,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
         albumsView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // Create a new intent to open the {@link PhrasesActivity}
+                // Create a new intent to open the {@link AlbumActivity}
                 Intent albumsIntent = new Intent(MainActivity.this, AlbumActivity.class);
 
                 // Start the new activity
@@ -84,12 +81,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
-
+        RelativeLayout nowPlayingActivity = (RelativeLayout) findViewById(R.id.now_playing);
+        mLayout.setAnchorPoint(0.4f);
+        mLayout.setDragView(nowPlayingActivity);
         mLayout =(SlidingUpPanelLayout) findViewById(R.id.sliding_layout);
         mLayout.addPanelSlideListener(new SlidingUpPanelLayout.PanelSlideListener() {
             @Override
             public void onPanelSlide(View panel, float slideOffset) {
+
                 Log.i(TAG, "onPanelSlide, offset " + slideOffset);
             }
 
@@ -102,6 +101,14 @@ public class MainActivity extends AppCompatActivity {
         mLayout.setFadeOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                mLayout.setPanelState(SlidingUpPanelLayout.PanelState.COLLAPSED);
+            }
+        });
+
+        mLayout.setFadeOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onPanelOpened(View panel) {
+                setContentView(R.layout.now_playing);
                 mLayout.setPanelState(SlidingUpPanelLayout.PanelState.COLLAPSED);
             }
         });
