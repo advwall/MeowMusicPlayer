@@ -4,15 +4,21 @@
     android:id="@+id/menu">
 
     <item
-        android:id="@+id/action_toggle"
+        android:id="@+id/settings_one"
         android:orderInCategory="100"
         sothree:showAsAction="never"
         android:title="@string/settings_one"/>
 
     <item
-        android:id="@+id/action_anchor"
+        android:id="@+id/settings_two"
         android:orderInCategory="200"
         sothree:showAsAction="never"
         android:title="@string/settings_two"/>
+
+    <item
+        android:id="@+id/settings_three"
+        android:orderInCategory="200"
+        sothree:showAsAction="never"
+        android:title="@string/settings_three"/>
 
 </menu>

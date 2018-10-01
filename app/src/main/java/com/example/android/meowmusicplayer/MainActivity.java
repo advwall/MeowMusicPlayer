@@ -10,6 +10,8 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 import com.sothree.slidinguppanel.SlidingUpPanelLayout;
@@ -90,6 +92,42 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        // Find the button which plays the available audio
+        final Button playButton = (Button) findViewById(R.id.play_btn);
+        playButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                // Create a new intent to open the {@link AlbumActivity}
+                Log.i(TAG, "Play Audio");
+            }
+        });
+
+        // Find the button which plays the available audio
+        final Button pauseButton = (Button) findViewById(R.id.pause_btn);
+        pauseButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                // Create a new intent to open the {@link AlbumActivity}
+                Log.i(TAG, "Pause Audio");
+            }
+        });
+
+        // Find the button which plays the available audio
+        final Button stopButton = (Button) findViewById(R.id.stop_btn);
+        stopButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                // Create a new intent to open the {@link AlbumActivity}
+                Log.i(TAG, "Stop Audio");
+            }
+        });
+
+        // Find the button which plays the available audio
+        final ImageButton exitPlayingButton = (ImageButton) findViewById(R.id.exit_playing);
+        exitPlayingButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                // Create a new intent to open the {@link AlbumActivity}
+                Log.i(TAG, "Collapse Now Playing Activity");
+            }
+        });
+
     }
 
     //These methods tell the options menu what to do.
@@ -97,7 +135,7 @@ public class MainActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu, menu);
-        MenuItem item = menu.findItem(R.id.action_toggle);
+        MenuItem item = menu.findItem(R.id.settings_one);
         if (Layout != null) {
             if (Layout.getPanelState() == SlidingUpPanelLayout.PanelState.HIDDEN) {
                 item.setTitle(R.string.settings_one);
@@ -116,7 +154,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()){
-            case R.id.action_toggle: {
+            case R.id.settings_three: {
                 if (Layout != null) {
                     if (Layout.getPanelState() != SlidingUpPanelLayout.PanelState.HIDDEN) {
                         Layout.setPanelState(SlidingUpPanelLayout.PanelState.HIDDEN);
