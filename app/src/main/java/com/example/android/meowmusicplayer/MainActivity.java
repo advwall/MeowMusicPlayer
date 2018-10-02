@@ -5,7 +5,6 @@ package com.example.android.meowmusicplayer;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -13,7 +12,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
-import android.widget.Toast;
 import com.sothree.slidinguppanel.SlidingUpPanelLayout;
 
 /**
@@ -57,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        // Find the View that shows the phrases category
+        // Find the View that shows the albums category
         TextView albumsView = findViewById(R.id.albums);
         albumsView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -135,14 +133,7 @@ public class MainActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu, menu);
-        MenuItem item = menu.findItem(R.id.settings_one);
-        if (Layout != null) {
-            if (Layout.getPanelState() == SlidingUpPanelLayout.PanelState.HIDDEN) {
-                item.setTitle(R.string.settings_one);
-            } else {
-                item.setTitle(R.string.settings_two);
-            }
-        }
+
         return true;
     }
 
@@ -154,16 +145,33 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()){
+
+            case R.id.settings_one: {
+                Intent songsIntent = new Intent(MainActivity.this, SongActivity.class);
+
+                // Start the new activity
+                startActivity(songsIntent);
+                Log.i(TAG, "Songs Activity");
+                return true;
+            }
+
+            case R.id.settings_two: {
+                // Create a new intent to open the {@link ArtistActivity}
+                Intent artistsIntent = new Intent(MainActivity.this, ArtistActivity.class);
+
+                // Start the new activity
+                startActivity(artistsIntent);
+                Log.i(TAG, "Artists Activity");
+                return true;
+            }
+
             case R.id.settings_three: {
-                if (Layout != null) {
-                    if (Layout.getPanelState() != SlidingUpPanelLayout.PanelState.HIDDEN) {
-                        Layout.setPanelState(SlidingUpPanelLayout.PanelState.HIDDEN);
-                        item.setTitle(R.string.settings_one);
-                    } else {
-                        Layout.setPanelState(SlidingUpPanelLayout.PanelState.COLLAPSED);
-                        item.setTitle(R.string.settings_two);
-                    }
-                }
+                // Create a new intent to open the {@link AlbumActivity}
+                Intent albumsIntent = new Intent(MainActivity.this, AlbumActivity.class);
+
+                // Start the new activity
+                startActivity(albumsIntent);
+                Log.i(TAG, "Albums Activity");
                 return true;
             }
         }

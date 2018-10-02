@@ -1,52 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/list_layout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="horizontal"
     android:background="@color/tabs"
     android:minHeight="@dimen/list_item_height">
 
-    <ImageView
-        android:id="@+id/image"
-        android:layout_width="@dimen/list_item_height"
-        android:layout_height="@dimen/list_item_height"
-        android:src="@drawable/ic_launcher_foreground"
-        android:contentDescription="@string/tab_text_3"
-        />
-
     <LinearLayout
-        android:id="@+id/text_container"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/list_item_height"
-        android:orientation="vertical"
-        android:paddingLeft="16dp"
-        android:paddingRight="16dp"
-        >
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@id/albums">
 
-        <TextView
-            android:id="@+id/song_name"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:gravity="bottom"
-            android:textAppearance="?android:textAppearanceMedium"
-            android:textColor="@android:color/white"
-            android:textStyle="bold"
-            tools:text="Song" />
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="@dimen/list_item_height"
+            android:layout_height="@dimen/list_item_height"
+            android:src="@drawable/ic_launcher_foreground"
+            android:contentDescription="@string/tab_text_3"
+            />
 
-        <TextView
-            android:id="@+id/artist_name"
+        <LinearLayout
+            android:id="@+id/text_container"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:gravity="top"
-            android:textAppearance="?android:textAppearanceMedium"
-            android:textColor="@android:color/white"
-            tools:text="Artist" />
+            android:layout_height="@dimen/list_item_height"
+            android:orientation="vertical"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            >
+
+            <TextView
+                android:id="@+id/song_name"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="bottom"
+                android:textAppearance="?android:textAppearanceMedium"
+                android:textColor="@android:color/white"
+                android:textStyle="bold"
+                tools:text="Song" />
+
+            <TextView
+                android:id="@+id/artist_name"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="top"
+                android:textAppearance="?android:textAppearanceMedium"
+                android:textColor="@android:color/white"
+                tools:text="Artist" />
+
+            </LinearLayout>
 
     </LinearLayout>
 
 
-</LinearLayout>
+</RelativeLayout>

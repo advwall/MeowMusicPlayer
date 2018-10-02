@@ -27,18 +27,9 @@
             </intent-filter>
         </activity>
 
-        <!--Child activities -->
-        <activity android:name=".NowPlayingActivity"
-            android:label="@string/nowPlaying"
-            android:parentActivityName=".MainActivity"
-            >
-            <!-- Parent activity meta-data to support 4.0 and lower -->
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity"/>
-        </activity>
+
         <activity android:name=".SongActivity"
-            android:label="@string/tab_text_1"
+            android:label="@string/settings_one"
             android:parentActivityName=".MainActivity">
             <!-- Parent activity meta-data to support 4.0 and lower -->
             <meta-data
@@ -46,7 +37,7 @@
                 android:value=".MainActivity"/>
         </activity>
         <activity android:name=".ArtistActivity"
-            android:label="@string/tab_text_2"
+            android:label="@string/settings_two"
             android:parentActivityName=".MainActivity">
             <!-- Parent activity meta-data to support 4.0 and lower -->
             <meta-data
@@ -54,7 +45,7 @@
                 android:value=".MainActivity"/>
         </activity>
         <activity android:name=".AlbumActivity"
-            android:label="@string/tab_text_3"
+            android:label="@string/settings_three"
             android:parentActivityName=".MainActivity">
             <!-- Parent activity meta-data to support 4.0 and lower -->
             <meta-data

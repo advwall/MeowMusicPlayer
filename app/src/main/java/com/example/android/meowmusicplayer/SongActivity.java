@@ -1,11 +1,19 @@
 package com.example.android.meowmusicplayer;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.Layout;
+import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
+
+import com.sothree.slidinguppanel.SlidingUpPanelLayout;
+
 import java.util.ArrayList;
 
 
@@ -15,7 +23,7 @@ public class SongActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.song_list);
-        setTitle(R.string.song_name);
+        setTitle(R.string.settings_one);
 
         ListView listView = findViewById(R.id.list);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -41,5 +49,52 @@ public class SongActivity extends AppCompatActivity {
         // Make the {@link ListView} use the {@link MusicAdapter} we created above, so that the
         // {@link ListView} will display list items for each {@link Music} in the list.
         listView.setAdapter(adapter);
+    }
+
+    //These methods tell the options menu what to do.
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu, menu);
+
+        return true;
+    }
+
+    @Override
+    public boolean onPrepareOptionsMenu(Menu menu) {
+        return super.onPrepareOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()){
+
+            case R.id.settings_one: {
+                Intent songsIntent = new Intent(SongActivity.this, SongActivity.class);
+
+                // Start the new activity
+                startActivity(songsIntent);
+                return true;
+            }
+
+            case R.id.settings_two: {
+                // Create a new intent to open the {@link ArtistActivity}
+                Intent artistsIntent = new Intent(SongActivity.this, ArtistActivity.class);
+
+                // Start the new activity
+                startActivity(artistsIntent);
+                return true;
+            }
+
+            case R.id.settings_three: {
+                // Create a new intent to open the {@link AlbumActivity}
+                Intent albumsIntent = new Intent(SongActivity.this, AlbumActivity.class);
+
+                // Start the new activity
+                startActivity(albumsIntent);
+                return true;
+            }
+        }
+        return super.onOptionsItemSelected(item);
     }
 }
