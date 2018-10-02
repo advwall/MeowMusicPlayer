@@ -3,17 +3,12 @@ package com.example.android.meowmusicplayer;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.text.Layout;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
-
-import com.sothree.slidinguppanel.SlidingUpPanelLayout;
-
 import java.util.ArrayList;
 
 
@@ -70,6 +65,7 @@ public class SongActivity extends AppCompatActivity {
         switch (item.getItemId()){
 
             case R.id.settings_one: {
+                // Create a new intent to open the {@link SongActivity}
                 Intent songsIntent = new Intent(SongActivity.this, SongActivity.class);
 
                 // Start the new activity

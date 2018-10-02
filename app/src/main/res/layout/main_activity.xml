@@ -80,7 +80,7 @@
                 android:layout_height="wrap_content"
                 android:paddingStart="8dp"
                 android:paddingEnd="8dp"
-                android:text="@string/song_name"
+                android:text="@string/currently_playing_song"
                 android:layout_gravity="start"/>
 
             <ImageButton
@@ -88,7 +88,7 @@
                 android:layout_width="@dimen/image_size"
                 android:layout_height="@dimen/image_size"
                 android:layout_gravity="end"
-                android:src="@drawable/outline_clear_black_18dp"
+                android:src="@drawable/outline_clear_black_18dp2x"
                 android:layout_marginEnd="16dp"
                 android:adjustViewBounds="true"
                 android:clickable="true"
@@ -120,7 +120,7 @@
             android:layout_marginBottom="-34dp"
             android:gravity="bottom"
             android:padding="16dp"
-            android:text="@string/song_name"/>
+            android:text="@string/currently_playing_song"/>
 
         <TextView
             android:id="@+id/playArtist"
@@ -128,7 +128,7 @@
             android:layout_height="wrap_content"
             style="@style/NowPlayingStyle"
             android:layout_above="@+id/seekbar"
-            android:text="@string/artist_name"
+            android:text="@string/currently_playing_artist"
             android:padding="16dp"
             android:gravity="top"/>
 

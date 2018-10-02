@@ -91,38 +91,38 @@ public class MainActivity extends AppCompatActivity {
         });
 
         // Find the button which plays the available audio
-        final Button playButton = (Button) findViewById(R.id.play_btn);
+        final Button playButton = findViewById(R.id.play_btn);
         playButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                // Create a new intent to open the {@link AlbumActivity}
+                //Plays audio
                 Log.i(TAG, "Play Audio");
             }
         });
 
         // Find the button which plays the available audio
-        final Button pauseButton = (Button) findViewById(R.id.pause_btn);
+        final Button pauseButton = findViewById(R.id.pause_btn);
         pauseButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                // Create a new intent to open the {@link AlbumActivity}
+                //Pauses the audio
                 Log.i(TAG, "Pause Audio");
             }
         });
 
         // Find the button which plays the available audio
-        final Button stopButton = (Button) findViewById(R.id.stop_btn);
+        final Button stopButton = findViewById(R.id.stop_btn);
         stopButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                // Create a new intent to open the {@link AlbumActivity}
+                //Stops the audio
                 Log.i(TAG, "Stop Audio");
             }
         });
 
         // Find the button which plays the available audio
-        final ImageButton exitPlayingButton = (ImageButton) findViewById(R.id.exit_playing);
+        final ImageButton exitPlayingButton = findViewById(R.id.exit_playing);
         exitPlayingButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                // Create a new intent to open the {@link AlbumActivity}
-                Log.i(TAG, "Collapse Now Playing Activity");
+                Layout.setPanelState(SlidingUpPanelLayout.PanelState.COLLAPSED);
+
             }
         });
 

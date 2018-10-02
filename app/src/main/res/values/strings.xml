@@ -4,8 +4,6 @@
 
     <!-- Category name for the Now Playing screen [CHAR LIMIT=20] -->
     <string name="nowPlaying">Now Playing</string>
-    <string name="title_activity_menu">Your Music</string>
-    <string name="action_settings">Settings</string>
 
     <!-- Category name for the list of songs. -->
     <string name="play">Play</string>
@@ -21,11 +19,11 @@
     <!-- Category name for the list of Albums.  -->
     <string name="tab_text_3">Albums</string>
 
-    <string name="song_name">Current Track</string>
-    <string name="artist_name">Current Artist</string>
-    <string name="album_name">Current Album</string>
+    <!-- Menu items to navigate between activities.  -->
     <string name="settings_one">Songs</string>
     <string name="settings_two">Artists</string>
     <string name="settings_three">Albums</string>
+    <string name="currently_playing_song">Current Track</string>
+    <string name="currently_playing_artist">Current Artist</string>
 
 </resources>
